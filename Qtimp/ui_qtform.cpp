@@ -9,6 +9,8 @@ int main(int arg1, char *arg2[])
     Ui::Form test;
     test.setupUi(swidget);
     swidget->show();
+	Niflib::NiNode* qparent;
+	Interface* maxapi;
 	
 return app.exec();
 }

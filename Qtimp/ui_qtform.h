@@ -15,6 +15,10 @@
 #include <QtGui\qpushbutton.h>
 #include <QtGui\qwidget.h>
 #include <niflib.h>
+#include <obj\NiObject.h>
+#include <obj\NiNode.h>
+#include <max.h>
+#include <maxapi.h>
 
 
 class Ui_Form
