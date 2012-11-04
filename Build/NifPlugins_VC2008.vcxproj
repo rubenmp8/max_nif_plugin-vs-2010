@@ -960,17 +960,18 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\include;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\NvTriStrip;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\TriStripper;C:\Users\esmeralda\Documents\Visual Studio 2008\qhull\src;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NIFLIB_STATIC_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\include;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\NvTriStrip;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\TriStripper;C:\Users\esmeralda\Documents\Visual Studio 2008\qhull\src;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\include;C:\Qt\4.8.3\include;C:\Users\esmeralda\Documents\Visual Studio 2010\Projects\max_nif_plugin-vs-2010\Qtimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NIFLIB_STATIC_LINK;-STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib\bin64;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\x64\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib\bin64;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\x64\lib;C:\Qt\4.8.3\lib</AdditionalLibraryDirectories>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
-      <AdditionalDependencies>niflib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>niflib.lib;qtmain.lib;QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -981,6 +982,7 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <ClInclude Include="..\NifProps\bhkHelperFuncs.h" />
     <ClInclude Include="..\NifProps\bhkHelperInterface.h" />
     <ClInclude Include="..\NifProps\bhkRigidBodyInterface.h" />
+    <ClInclude Include="..\Qtimp\ui_qtform.h" />
     <CustomBuildStep Include="..\NifProps\dds\dds.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Max 2008|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Max 2009|x64'">true</ExcludedFromBuild>
@@ -1278,6 +1280,7 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <ClCompile Include="..\NifImport\MaxNifImport.cpp" />
     <ClCompile Include="..\NifImport\NifDialog.cpp" />
     <ClCompile Include="..\NifImport\NIFImport.cpp" />
+    <ClCompile Include="..\Qtimp\ui_qtform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\NifProps\Modifier\AddDel16.bmp" />
@@ -1291,6 +1294,7 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <None Include="..\LICENSE.TXT" />
     <None Include="..\MaxNifTools.ini" />
     <None Include="..\MaxNifTools.iss" />
+    <None Include="..\Qtimp\qtform.ui" />
     <None Include="..\README.TXT" />
     <None Include="..\TODO.txt" />
   </ItemGroup>
