@@ -974,7 +974,7 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
       <AdditionalDependencies>niflib.lib;qtmain.lib;QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
-      <Command>$(QTDIR)\moc.exe "$(SolutionDir)Qtimp\ui_qtform.h"</Command>
+      <Command>$(QTDIR)\moc.exe "$(SolutionDir)Qtimp\ui_qtform.h" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>mocking.."%(FullPath)"</Message>
