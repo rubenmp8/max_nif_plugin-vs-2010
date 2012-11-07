@@ -960,8 +960,8 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\include;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\NvTriStrip;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\TriStripper;C:\Users\esmeralda\Documents\Visual Studio 2008\qhull\src;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\include;C:\Qt\4.8.3\include;C:\Users\esmeralda\Documents\Visual Studio 2010\Projects\max_nif_plugin-vs-2010\Qtimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NIFLIB_STATIC_LINK;-STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\include;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\NvTriStrip;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\TriStripper;C:\Users\esmeralda\Documents\Visual Studio 2008\qhull\src;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\include;C:\Qt\4.8.3\include;C:\Qt\4.8.3\include\QtCore;C:\Qt\4.8.3\include\QtGui;C:\Qt\4.8.3\include\ActiveQt;C:\Qt\4.8.3\mkspecs\default;C:\Qt\4.8.3\src;C:\Users\esmeralda\Documents\Visual Studio 2010\Projects\max_nif_plugin-vs-2010\Qtimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NIFLIB_STATIC_LINK;-STATIC;QT_QTWINMIGRATE_IMPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
@@ -973,6 +973,26 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
       <TargetMachine>MachineX64</TargetMachine>
       <AdditionalDependencies>niflib.lib;qtmain.lib;QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <CustomBuildStep>
+      <Command>$(QTDIR)\moc.exe "$(SolutionDir)Qtimp\ui_qtform.h"</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>mocking.."%(FullPath)"</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(QTDIR)\moc.exe;%(FullPath)</Inputs>
+    </CustomBuildStep>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\NifProps\iNifProps.h" />
@@ -1294,7 +1314,6 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <None Include="..\LICENSE.TXT" />
     <None Include="..\MaxNifTools.ini" />
     <None Include="..\MaxNifTools.iss" />
-    <None Include="..\Qtimp\qtform.ui" />
     <None Include="..\README.TXT" />
     <None Include="..\TODO.txt" />
   </ItemGroup>
