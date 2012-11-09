@@ -5,7 +5,6 @@
 #include "NifStrings.h"
 #include "NifPlugins.h"
 #include "NifGui.h"
-#include <ui_qtform.h>
 
 using namespace std;
 
@@ -24,7 +23,6 @@ public:
 	void			SelectionSetChanged(Interface *ip,IUtil *iu);
 	void			Init(HWND hWnd);
 	void			Destroy(HWND hWnd);
-	int            qmain( int arg1,char* arg2[]);
 	void			DeleteThis() { }
 
 	void			selectionChanged();
@@ -298,7 +296,6 @@ void NifProps::Init(HWND hWnd)
 	mCbMaterial.init(GetDlgItem(hWnd, IDC_CB_MATERIAL));
 	mCbMotionSystem.init(GetDlgItem(hWnd, IDC_CB_MOTION_SYSTEM));
 	mCbQualityType.init(GetDlgItem(hWnd, IDC_CB_QUALITY_TYPE));
-	qmain(NULL,NULL);
 }
 
 void NifProps::Destroy(HWND hWnd)
@@ -306,10 +303,6 @@ void NifProps::Destroy(HWND hWnd)
 
 }
 
-int NifProps::qmain( int arg1,char* arg2[])
-{
-return 0;
-}
 
 INT_PTR NifProps::dlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {

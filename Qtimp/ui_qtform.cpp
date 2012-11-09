@@ -3,8 +3,10 @@
 #include <ui_qtform.h>
 #include <QtGui/QWidget>
 
-int main(int arg1, char *arg2[])
+Ui_Form::Ui_Form()
 {
-	
-return 0;
+	shader = new QListView;
+	quitButton = new QPushButton;
+	shader , SLOT(setCurrentIndex(int));
+    connect(quitButton, SIGNAL(clicked()),shader, SLOT(setCurrentIndex(int)));
 }
