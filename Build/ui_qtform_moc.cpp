@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_qtform.h'
 **
-** Created: Wed 7. Nov 11:06:30 2012
+** Created: Tue 13. Nov 22:08:22 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -17,13 +17,13 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_Ui_Form[] = {
+static const uint qt_meta_data_Ui__Form[] = {
 
  // content:
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -31,67 +31,72 @@ static const uint qt_meta_data_Ui_Form[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-       9,    8,    8,    8, 0x08,
-      16,    8,    8,    8, 0x08,
-      23,    8,    8,    8, 0x08,
+      10,    9,    9,    9, 0x0a,
+      31,    9,    9,    9, 0x0a,
+      49,    9,    9,    9, 0x0a,
+      66,   61,    9,    9, 0x0a,
+      84,   61,    9,    9, 0x0a,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_Ui_Form[] = {
-    "Ui_Form\0\0save()\0quit()\0setshader()\0"
+static const char qt_meta_stringdata_Ui__Form[] = {
+    "Ui::Form\0\0setcolor_form(Color)\0"
+    "valueChanged(int)\0setNum(int)\0Form\0"
+    "setupUi(QWidget*)\0retranslateUi(QWidget*)\0"
 };
 
-void Ui_Form::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Ui::Form::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        Ui_Form *_t = static_cast<Ui_Form *>(_o);
+        Form *_t = static_cast<Form *>(_o);
         switch (_id) {
-        case 0: _t->save(); break;
-        case 1: _t->quit(); break;
-        case 2: _t->setshader(); break;
+        case 0: _t->setcolor_form((*reinterpret_cast< Color(*)>(_a[1]))); break;
+        case 1: _t->valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->setNum((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->setupUi((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
+        case 4: _t->retranslateUi((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
-const QMetaObjectExtraData Ui_Form::staticMetaObjectExtraData = {
+const QMetaObjectExtraData Ui::Form::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject Ui_Form::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_Ui_Form,
-      qt_meta_data_Ui_Form, &staticMetaObjectExtraData }
+const QMetaObject Ui::Form::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_Ui__Form,
+      qt_meta_data_Ui__Form, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &Ui_Form::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &Ui::Form::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *Ui_Form::metaObject() const
+const QMetaObject *Ui::Form::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *Ui_Form::qt_metacast(const char *_clname)
+void *Ui::Form::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_Ui_Form))
-        return static_cast<void*>(const_cast< Ui_Form*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_Ui__Form))
+        return static_cast<void*>(const_cast< Form*>(this));
     return QWidget::qt_metacast(_clname);
 }
 
-int Ui_Form::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Ui::Form::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }

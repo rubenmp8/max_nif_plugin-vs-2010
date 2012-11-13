@@ -680,8 +680,9 @@
     <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release - Max x64|Win32'">false</PreBuildEventUseInBuild>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release - Max x64|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release - Max x64|x64'">$(Platform)\$(Configuration)\</IntDir>
-    <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release - Max x64|x64'">false</PreBuildEventUseInBuild>
+    <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release - Max x64|x64'">true</PreBuildEventUseInBuild>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release - Max x64|x64'">.dlu</TargetExt>
+    <CustomBuildAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release - Max x64|x64'" />
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - Max 6|x64'">
     <Link>
@@ -960,8 +961,8 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\include;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\NvTriStrip;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\TriStripper;C:\Users\esmeralda\Documents\Visual Studio 2008\qhull\src;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\include;C:\Qt\4.8.3\include;C:\Qt\4.8.3\include\QtCore;C:\Qt\4.8.3\include\QtGui;C:\Qt\4.8.3\include\ActiveQt;C:\Qt\4.8.3\mkspecs\default;C:\Qt\4.8.3\src;C:\Users\esmeralda\Documents\Visual Studio 2010\Projects\max_nif_plugin-vs-2010\Qtimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NIFLIB_STATIC_LINK;-STATIC;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\include;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\NvTriStrip;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2\TriStripper;C:\Users\esmeralda\Documents\Visual Studio 2008\qhull\src;C:\Users\esmeralda\Documents\Visual Studio 2008\niflib 0.8.2;C:\Program Files (x86)\Autodesk\3ds Max 2010 SDK\maxsdk\include;C:\Users\esmeralda\Documents\Visual Studio 2010\Projects\max_nif_plugin-vs-2010\Build\GeneratedFiles\Release - Max x64;C:\Qt\4.8.3\include;C:\Qt\4.8.3\include\QtCore;C:\Qt\4.8.3\include\QtGui;C:\Qt\4.8.3\include\ActiveQt;C:\Qt\4.8.3\mkspecs\default;C:\Qt\4.8.3\src;C:\Users\esmeralda\Documents\Visual Studio 2010\Projects\max_nif_plugin-vs-2010\Qtimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NIFLIB_STATIC_LINK;-STATIC;QT_QTWINMIGRATE_IMPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
@@ -971,27 +972,29 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
-      <AdditionalDependencies>niflib.lib;qtmain.lib;QtCore4.lib;QtGui4.lib;QtCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>niflib.lib;qtmain.lib;QtCore4.lib;QtGui4.lib;QtUiTools.lib;QtGui.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
-      <Command>$(QTDIR)\moc.exe "$(SolutionDir)Qtimp\ui_qtform.h" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Message>mocking.."%(FullPath)"</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Inputs>$(QTDIR)\moc.exe;%(FullPath)</Inputs>
-    </CustomBuildStep>
-    <PreBuildEvent>
       <Command>
       </Command>
-    </PreBuildEvent>
-    <PreBuildEvent>
+    </CustomBuildStep>
+    <CustomBuildStep>
       <Message>
       </Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <PreBuildEvent>
+      <Command>$(QTDIR)\moc.exe "$(SolutionDir)Qtimp\ui_qtform.h" -o ".\GeneratedFiles\$(ConfigurationName)\ui_qtform_moc.cpp"</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>mocking.."%(FullPath)"</Message>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -1002,6 +1005,7 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <ClInclude Include="..\NifProps\bhkHelperFuncs.h" />
     <ClInclude Include="..\NifProps\bhkHelperInterface.h" />
     <ClInclude Include="..\NifProps\bhkRigidBodyInterface.h" />
+    <ClInclude Include="..\Qtimp\ui_qtform.h" />
     <CustomBuildStep Include="..\NifProps\dds\dds.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Max 2008|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Max 2009|x64'">true</ExcludedFromBuild>
@@ -1299,6 +1303,8 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <ClCompile Include="..\NifImport\MaxNifImport.cpp" />
     <ClCompile Include="..\NifImport\NifDialog.cpp" />
     <ClCompile Include="..\NifImport\NIFImport.cpp" />
+    <ClCompile Include="..\Qtimp\ui_qtform.cpp" />
+    <ClCompile Include="GeneratedFiles\Release - Max x64\ui_qtform_moc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\NifProps\Modifier\AddDel16.bmp" />
@@ -1314,7 +1320,6 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <None Include="..\MaxNifTools.iss" />
     <None Include="..\README.TXT" />
     <None Include="..\TODO.txt" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\NifProps\NifProps.rc" />
