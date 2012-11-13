@@ -1,0 +1,8 @@
+build.bat
+makeconfig.bat
+makeconfig.sh
+makezip.sh
+NifPlugins_VC2010.opensdf
+NifPlugins_VC2010.sdf
+stagenif.bat
+start_devenv.bat
