@@ -991,11 +991,15 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
       </Inputs>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>$(QTDIR)\moc.exe "$(SolutionDir)Qtimp\ui_qtform.h" -o ".\GeneratedFiles\$(ConfigurationName)\ui_qtform_moc.cpp"</Command>
+      <Command>$(QTDIR)\moc.exe "$(SolutionDir)Qtimp\ui_qtform.h" -o ".\GeneratedFiles\$(ConfigurationName)\ui_qtform_moc.cpp"
+</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>mocking.."%(FullPath)"</Message>
     </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>copy ".\GeneratedFiles\$(ConfigurationName)\ui_qtform_moc.cpp"  "$(SolutionDir)"</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\NifProps\iNifProps.h" />
