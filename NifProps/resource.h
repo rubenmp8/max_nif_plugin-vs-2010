@@ -339,6 +339,7 @@
 #define IDC_SP_ANIM_PRIORITY            11602
 #define IDC_ANIM_END                    11602
 
+
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED

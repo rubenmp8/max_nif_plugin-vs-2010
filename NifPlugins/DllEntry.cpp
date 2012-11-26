@@ -12,8 +12,7 @@
  **********************************************************************/
 
 #include <notify.h>
-
-
+#include <ui_qtform.h>
 extern void DoNotifyNodeHide(void *param, NotifyInfo *info);
 extern void DoNotifyNodeUnHide(void *param, NotifyInfo *info);
 extern Class_ID BHKLISTOBJECT_CLASS_ID;
@@ -75,6 +74,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,ULONG fdwReason,LPVOID lpvReserved)
 	}
 	if (fdwReason == DLL_PROCESS_ATTACH)
 		InitializeLibSettings();
+
 	return (TRUE);
 }
 
@@ -106,6 +106,7 @@ void InitializeLibSettings()
       classDescriptions[nClasses++] = GetbhkBoxDesc();
       classDescriptions[nClasses++] = GetBSDSModifierDesc();
       classDescriptions[nClasses++] = GetNifShaderDesc();
+	 
    }
    if ( GetIniValue<bool>("NifFurniture", "Enable", true, iniName) ) {
       classDescEnabled[CD_Furniture] = true;
@@ -198,6 +199,7 @@ __declspec( dllexport ) int LibNumberClasses()
 __declspec( dllexport ) ClassDesc* LibClassDesc(int i)
 {
    return classDescriptions[i];
+
 }
 
 TCHAR *GetString(int id)

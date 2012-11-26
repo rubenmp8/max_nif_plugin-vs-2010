@@ -1,4 +1,6 @@
 class NifProps;
+#include <iostream>
+#include <string>
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
@@ -9,6 +11,8 @@ class NifProps;
 #include <QtGui/QPushButton>
 #include <QtGui/QSlider>
 #include <QtGui/QWidget>
+#include <niflib.h>
+#include "Max.h"
 
 namespace Ui 
 {

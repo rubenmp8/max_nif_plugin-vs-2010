@@ -57,21 +57,46 @@ class MaxNifImport : public SceneImport {
 
 class MaxNifImportClassDesc : public ClassDesc2 {
 	public:
-	int 			   IsPublic() { return TRUE; }
-	void *			Create(BOOL loading = FALSE) { return new MaxNifImport(); }
-	const TCHAR *	ClassName() { return GetString(IDS_CLASS_NAME); }
-	SClass_ID		SuperClassID() { return SCENE_IMPORT_CLASS_ID; }
-	Class_ID		   ClassID() { return MaxNifImport_CLASS_ID; }
-	const TCHAR* 	Category() { return GetString(IDS_CATEGORY); }
-
-	const TCHAR*	InternalName() { return _T("MaxNifImport"); }	// returns fixed parsable name (scripter-visible name)
-	HINSTANCE		HInstance() { return hInstance; }					// returns owning module handle
+	int IsPublic()
+	{ 
+		return TRUE; 
+	}
+	void* Create(BOOL loading = FALSE) 
+	{ 
+		return new MaxNifImport();
+	}
+	const TCHAR* ClassName() 
+	{ 
+		return GetString(IDS_CLASS_NAME); 
+	}
+	SClass_ID SuperClassID() 
+	{ 
+		return SCENE_IMPORT_CLASS_ID; 
+	}
+	Class_ID ClassID() 
+	{
+		return MaxNifImport_CLASS_ID; 
+	}
+	const TCHAR* Category() 
+	{ 
+		return GetString(IDS_CATEGORY); 
+	}
+	const TCHAR* InternalName() 
+	{ 
+		return _T("MaxNifImport"); 
+	}	
+	HINSTANCE HInstance()
+	{ 
+		return hInstance; 
+	}					
 	
-
 };
 
 static MaxNifImportClassDesc MaxNifImportDesc;
-ClassDesc2* GetMaxNifImportDesc() { return &MaxNifImportDesc; }
+ClassDesc2* GetMaxNifImportDesc() 
+{ 
+	return &MaxNifImportDesc; 
+}
 
 
 //--- MaxNifImport -------------------------------------------------------

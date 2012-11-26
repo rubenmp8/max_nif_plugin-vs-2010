@@ -168,9 +168,6 @@
     <ClInclude Include="..\NifCommon\objectParams.h">
       <Filter>NifCommon\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\niflib 0.8.2\include\niflib.h">
-      <Filter>NifPlugins</Filter>
-    </ClInclude>
     <ClInclude Include="..\NifPlugins\pch.h">
       <Filter>NifPlugins</Filter>
     </ClInclude>
@@ -200,6 +197,9 @@
     </ClInclude>
     <ClInclude Include="..\Qtimp\ui_qtform.h">
       <Filter>Qtimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\niflib\include\niflib.h">
+      <Filter>NifPlugins</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -353,10 +353,10 @@
     <ClCompile Include="..\NifImport\NIFImport.cpp">
       <Filter>NifImport\Importer</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release - Max x64\ui_qtform_moc.cpp" />
     <ClCompile Include="..\Qtimp\ui_qtform.cpp">
       <Filter>Qtimp</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release - Max x64\ui_qtform_moc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\NifProps\Modifier\AddDel16.bmp">

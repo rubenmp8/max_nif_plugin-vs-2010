@@ -343,6 +343,7 @@ inline LPTSTR ConvertMAXScriptToC<LPTSTR>::cvt(Value* val)
 
 inline Texmap* ConvertMAXScriptToC<Texmap*>::cvt(Value* val)
 {
+	
 	return val->to_texmap();
 }
 
