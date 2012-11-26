@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_qtform.h'
 **
-** Created: Mon 26. Nov 20:09:34 2012
+** Created: Mon 26. Nov 23:48:02 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_Ui__Form[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -34,16 +34,17 @@ static const uint qt_meta_data_Ui__Form[] = {
       10,    9,    9,    9, 0x0a,
       31,    9,    9,    9, 0x0a,
       49,    9,    9,    9, 0x0a,
-      66,   61,    9,    9, 0x0a,
-      84,   61,    9,    9, 0x0a,
+      61,    9,    9,    9, 0x0a,
+      76,   71,    9,    9, 0x0a,
+      94,   71,    9,    9, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Ui__Form[] = {
     "Ui::Form\0\0setcolor_form(Color)\0"
-    "valueChanged(int)\0setNum(int)\0Form\0"
-    "setupUi(QWidget*)\0retranslateUi(QWidget*)\0"
+    "valueChanged(int)\0setNum(int)\0addValu()\0"
+    "Form\0setupUi(QWidget*)\0retranslateUi(QWidget*)\0"
 };
 
 void Ui::Form::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -55,8 +56,9 @@ void Ui::Form::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 0: _t->setcolor_form((*reinterpret_cast< Color(*)>(_a[1]))); break;
         case 1: _t->valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 2: _t->setNum((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 3: _t->setupUi((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
-        case 4: _t->retranslateUi((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
+        case 3: _t->addValu(); break;
+        case 4: _t->setupUi((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
+        case 5: _t->retranslateUi((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -94,9 +96,9 @@ int Ui::Form::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

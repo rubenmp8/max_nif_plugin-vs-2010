@@ -7,28 +7,28 @@
     <x>0</x>
     <y>0</y>
     <width>524</width>
-    <height>468</height>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QListView" name="listView">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>40</y>
      <width>181</width>
-     <height>451</height>
+     <height>421</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>10</x>
      <y>10</y>
-     <width>311</width>
+     <width>181</width>
      <height>23</height>
     </rect>
    </property>
@@ -39,8 +39,8 @@
   <widget class="QSlider" name="horizontalSlider">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>90</y>
+     <x>210</x>
+     <y>40</y>
      <width>261</width>
      <height>19</height>
     </rect>
@@ -52,8 +52,8 @@
   <widget class="QSlider" name="horizontalSlider_2">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>140</y>
+     <x>210</x>
+     <y>90</y>
      <width>261</width>
      <height>19</height>
     </rect>
@@ -65,8 +65,8 @@
   <widget class="QSlider" name="horizontalSlider_3">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>190</y>
+     <x>210</x>
+     <y>140</y>
      <width>261</width>
      <height>19</height>
     </rect>
@@ -78,8 +78,8 @@
   <widget class="QSlider" name="horizontalSlider_4">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>240</y>
+     <x>210</x>
+     <y>190</y>
      <width>261</width>
      <height>19</height>
     </rect>
@@ -91,8 +91,8 @@
   <widget class="QSlider" name="horizontalSlider_5">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>290</y>
+     <x>210</x>
+     <y>240</y>
      <width>261</width>
      <height>19</height>
     </rect>
@@ -104,8 +104,8 @@
   <widget class="QSlider" name="horizontalSlider_6">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>340</y>
+     <x>210</x>
+     <y>290</y>
      <width>261</width>
      <height>19</height>
     </rect>
@@ -117,8 +117,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>90</y>
+     <x>480</x>
+     <y>40</y>
      <width>46</width>
      <height>13</height>
     </rect>
@@ -130,8 +130,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>140</y>
+     <x>480</x>
+     <y>90</y>
      <width>46</width>
      <height>13</height>
     </rect>
@@ -143,8 +143,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>190</y>
+     <x>480</x>
+     <y>140</y>
      <width>46</width>
      <height>13</height>
     </rect>
@@ -156,8 +156,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>240</y>
+     <x>480</x>
+     <y>190</y>
      <width>46</width>
      <height>13</height>
     </rect>
@@ -169,8 +169,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>290</y>
+     <x>480</x>
+     <y>240</y>
      <width>46</width>
      <height>13</height>
     </rect>
@@ -182,8 +182,8 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>340</y>
+     <x>480</x>
+     <y>290</y>
      <width>46</width>
      <height>13</height>
     </rect>
@@ -195,82 +195,205 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>320</y>
-     <width>46</width>
-     <height>13</height>
+     <x>210</x>
+     <y>270</y>
+     <width>91</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Specular Strength</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>270</y>
-     <width>46</width>
-     <height>13</height>
+     <x>210</x>
+     <y>220</y>
+     <width>131</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Specular Color</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>220</y>
-     <width>46</width>
-     <height>13</height>
+     <x>210</x>
+     <y>170</y>
+     <width>101</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Glossiness</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>170</y>
-     <width>46</width>
-     <height>13</height>
+     <x>210</x>
+     <y>120</y>
+     <width>111</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Alpha</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>120</y>
-     <width>46</width>
-     <height>13</height>
+     <x>210</x>
+     <y>70</y>
+     <width>91</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Emissive Multiple</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>70</y>
-     <width>46</width>
-     <height>13</height>
+     <x>210</x>
+     <y>20</y>
+     <width>71</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Emissive Color</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>550</y>
+     <width>311</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Apply changes</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>470</y>
+     <width>181</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Update scene</string>
    </property>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_2</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>323</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>489</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_3</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>281</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>485</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_4</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>488</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_5</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>347</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_6</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>296</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>489</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>489</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

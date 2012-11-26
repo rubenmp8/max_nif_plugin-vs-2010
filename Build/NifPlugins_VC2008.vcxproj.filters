@@ -378,6 +378,9 @@
     <None Include="..\MaxNifTools.iss" />
     <None Include="..\README.TXT" />
     <None Include="..\TODO.txt" />
+    <None Include="..\Qtimp\qtform.ui">
+      <Filter>Qtimp</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\NifProps\NifProps.rc">

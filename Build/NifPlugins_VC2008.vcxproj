@@ -1324,6 +1324,7 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <None Include="..\LICENSE.TXT" />
     <None Include="..\MaxNifTools.ini" />
     <None Include="..\MaxNifTools.iss" />
+    <None Include="..\Qtimp\qtform.ui" />
     <None Include="..\README.TXT" />
     <None Include="..\TODO.txt" />
   </ItemGroup>
