@@ -1,4 +1,4 @@
-class NifProps;
+
 #include <iostream>
 #include <string>
 #include <QtCore/QVariant>
@@ -12,8 +12,8 @@ class NifProps;
 #include <QtGui/QPushButton>
 #include <QtGui/QSlider>
 #include <QtGui/QWidget>
-#include <niflib.h>
-#include "Max.h"
+
+
 
 namespace Ui 
 {
@@ -45,8 +45,6 @@ public:
 	QPushButton *pushButton_2;
 	QPushButton *pushButton_3;
 	
-
-
 	public slots:
 		void setcolor_form(Color);
 		void valueChanged(int);
@@ -55,7 +53,6 @@ public:
 
 		void setupUi(QWidget *Form)
 		{
-            Interface* maxapi;
 			if (Form->objectName().isEmpty())
 				Form->setObjectName(QString::fromUtf8("Form"));
 			Form->resize(524, 586);
@@ -139,7 +136,7 @@ public:
 			QObject::connect(horizontalSlider_5, SIGNAL(valueChanged(int)), label_5, SLOT(setNum(int)));
 			QObject::connect(horizontalSlider_6, SIGNAL(valueChanged(int)), label_6, SLOT(setNum(int)));
 			QObject::connect(horizontalSlider, SIGNAL(valueChanged(int)), label, SLOT(setNum(int)));
-
+			
 			QMetaObject::connectSlotsByName(Form);
 		} // setupUi
 
@@ -165,5 +162,4 @@ public:
 	} // retranslateUi
 
 };
-
-} 
+}

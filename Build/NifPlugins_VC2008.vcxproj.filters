@@ -79,6 +79,9 @@
     <Filter Include="Qtimp">
       <UniqueIdentifier>{b5d1ad12-c8bc-4e7e-b1a9-7a6957b46e00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Qtimp\forms">
+      <UniqueIdentifier>{356d6e69-61a0-46d4-af50-eb5f627eb3fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\NifProps\iNifProps.h">
@@ -379,7 +382,7 @@
     <None Include="..\README.TXT" />
     <None Include="..\TODO.txt" />
     <None Include="..\Qtimp\qtform.ui">
-      <Filter>Qtimp</Filter>
+      <Filter>Qtimp\forms</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
