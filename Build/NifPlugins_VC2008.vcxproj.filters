@@ -204,6 +204,9 @@
     <ClInclude Include="..\..\niflib\include\niflib.h">
       <Filter>NifPlugins</Filter>
     </ClInclude>
+    <ClInclude Include="qtmethods.h">
+      <Filter>Qtimp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\NifProps\nifProps.cpp">

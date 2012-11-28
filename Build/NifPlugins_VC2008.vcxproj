@@ -1013,6 +1013,7 @@ xcopy /D /Y /I "$(TargetPath)" "$(OutDir)"
     <ClInclude Include="..\NifProps\bhkHelperInterface.h" />
     <ClInclude Include="..\NifProps\bhkRigidBodyInterface.h" />
     <ClInclude Include="..\Qtimp\ui_qtform.h" />
+    <ClInclude Include="qtmethods.h" />
     <CustomBuildStep Include="..\NifProps\dds\dds.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Max 2008|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Max 2009|x64'">true</ExcludedFromBuild>

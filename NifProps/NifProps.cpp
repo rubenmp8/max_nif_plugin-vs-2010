@@ -5,7 +5,7 @@
 #include "NifStrings.h"
 #include "NifPlugins.h"
 #include "NifGui.h"
-#include <ui_qtform.h>
+#include <qtmethods.h>
 
 using namespace std;
 
@@ -24,9 +24,8 @@ public:
 	void			SelectionSetChanged(Interface *ip,IUtil *iu);
 	void			Init(HWND hWnd);
 	void			Destroy(HWND hWnd);
-	int            qmain( int arg1,char* arg2[]);
 	void			DeleteThis() { }
-
+	void            qmain(void);
 	void			selectionChanged();
 
    INT_PTR			dlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -48,7 +47,8 @@ private:
 	NpComboBox		mCbMotionSystem;
 	NpComboBox		mCbQualityType;
 
-	void enableGUI(BOOL object, BOOL hvk, BOOL anim);		
+	void enableGUI(BOOL object, BOOL hvk, BOOL anim);	
+
 };
 
 static NifProps plugin;
@@ -72,8 +72,6 @@ class NifPropsClassDesc : public ClassDesc2
 
 static NifPropsClassDesc NifPropsDesc;
 ClassDesc2* GetNifPropsDesc() { return &NifPropsDesc; }
-
-
 
 
 static INT_PTR CALLBACK NifPropsDlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -297,7 +295,13 @@ void NifProps::Init(HWND hWnd)
 	mCbMaterial.init(GetDlgItem(hWnd, IDC_CB_MATERIAL));
 	mCbMotionSystem.init(GetDlgItem(hWnd, IDC_CB_MOTION_SYSTEM));
 	mCbQualityType.init(GetDlgItem(hWnd, IDC_CB_QUALITY_TYPE));
-	qmain(NULL,NULL);
+	qmain();
+}
+
+
+void NifProps::qmain(void)
+{
+  beginproc(NULL,NULL);
 }
 
 void NifProps::Destroy(HWND hWnd)
@@ -305,16 +309,6 @@ void NifProps::Destroy(HWND hWnd)
 
 }
 
-int NifProps::qmain( int arg1,char* arg2[])
-{
-	
-	QApplication app(arg1,arg2);
-	QWidget* swidget = new QWidget;
-	Ui::Form test;
-	test.setupUi(swidget);
-	swidget->show();
-	return app.exec();
-}
 
 INT_PTR NifProps::dlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {

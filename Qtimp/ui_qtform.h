@@ -5,22 +5,19 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
-#include <QtGui/QFormLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
 #include <QtGui/QListWidget>
 #include <QtGui/QPushButton>
 #include <QtGui/QSlider>
 #include <QtGui/QWidget>
 
-
-
-namespace Ui 
+namespace Ui
 {
-
 class Form : public QWidget
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	QListWidget *listWidget;
 	QPushButton *pushButton;
@@ -44,21 +41,24 @@ public:
 	QLabel *label_12;
 	QPushButton *pushButton_2;
 	QPushButton *pushButton_3;
-	
+	QLineEdit *lineEdit;
+
 	public slots:
-		void setcolor_form(Color);
-		void valueChanged(int);
-		void setNum(int);
-		void addValu();
+		
 
 		void setupUi(QWidget *Form)
 		{
 			if (Form->objectName().isEmpty())
 				Form->setObjectName(QString::fromUtf8("Form"));
 			Form->resize(524, 586);
+			Form->setAutoFillBackground(false);
 			listWidget = new QListWidget(Form);
+			new QListWidgetItem(listWidget);
+			new QListWidgetItem(listWidget);
+			new QListWidgetItem(listWidget);
 			listWidget->setObjectName(QString::fromUtf8("listWidget"));
 			listWidget->setGeometry(QRect(10, 40, 181, 421));
+			listWidget->setModelColumn(0);
 			pushButton = new QPushButton(Form);
 			pushButton->setObjectName(QString::fromUtf8("pushButton"));
 			pushButton->setGeometry(QRect(10, 10, 181, 23));
@@ -127,7 +127,11 @@ public:
 			pushButton_2->setGeometry(QRect(200, 550, 311, 23));
 			pushButton_3 = new QPushButton(Form);
 			pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-			pushButton_3->setGeometry(QRect(10, 470, 181, 23));
+			pushButton_3->setGeometry(QRect(10, 500, 181, 23));
+			lineEdit = new QLineEdit(Form);
+			lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+			lineEdit->setGeometry(QRect(10, 470, 181, 20));
+			lineEdit->setReadOnly(true);
 
 			retranslateUi(Form);
 			QObject::connect(horizontalSlider_2, SIGNAL(valueChanged(int)), label_2, SLOT(setNum(int)));
@@ -136,30 +140,45 @@ public:
 			QObject::connect(horizontalSlider_5, SIGNAL(valueChanged(int)), label_5, SLOT(setNum(int)));
 			QObject::connect(horizontalSlider_6, SIGNAL(valueChanged(int)), label_6, SLOT(setNum(int)));
 			QObject::connect(horizontalSlider, SIGNAL(valueChanged(int)), label, SLOT(setNum(int)));
-			
+			QObject::connect(listWidget, SIGNAL(itemSelectionChanged()), pushButton_3, SLOT(click()));
+			QObject::connect(listWidget, SIGNAL(currentTextChanged(QString)), lineEdit, SLOT(setText(QString)));
+
+			listWidget->setCurrentRow(-1);
+
+
 			QMetaObject::connectSlotsByName(Form);
 		} // setupUi
 
-	void retranslateUi(QWidget *Form)
-	{
-		Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
-		pushButton->setText(QApplication::translate("Form", "set shader", 0, QApplication::UnicodeUTF8));
-		label->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
-		label_2->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
-		label_3->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
-		label_4->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
-		label_5->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
-		label_6->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
-		label_7->setText(QApplication::translate("Form", "Specular Strength", 0, QApplication::UnicodeUTF8));
-		label_8->setText(QApplication::translate("Form", "Specular Color", 0, QApplication::UnicodeUTF8));
-		label_9->setText(QApplication::translate("Form", "Glossiness", 0, QApplication::UnicodeUTF8));
-		label_10->setText(QApplication::translate("Form", "Alpha", 0, QApplication::UnicodeUTF8));
-		label_11->setText(QApplication::translate("Form", "Emissive Multiple", 0, QApplication::UnicodeUTF8));
-		label_12->setText(QApplication::translate("Form", "Emissive Color", 0, QApplication::UnicodeUTF8));
-		pushButton_2->setText(QApplication::translate("Form", "Apply changes", 0, QApplication::UnicodeUTF8));
-		pushButton_3->setText(QApplication::translate("Form", "Update scene", 0, QApplication::UnicodeUTF8));
-		
-	} // retranslateUi
+		void retranslateUi(QWidget *Form)
+		{
+			Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+
+			const bool __sortingEnabled = listWidget->isSortingEnabled();
+			listWidget->setSortingEnabled(false);
+			QListWidgetItem *___qlistwidgetitem = listWidget->item(0);
+			___qlistwidgetitem->setText(QApplication::translate("Form", "default", 0, QApplication::UnicodeUTF8));
+			QListWidgetItem *___qlistwidgetitem1 = listWidget->item(1);
+			___qlistwidgetitem1->setText(QApplication::translate("Form", "skintint", 0, QApplication::UnicodeUTF8));
+			QListWidgetItem *___qlistwidgetitem2 = listWidget->item(2);
+			___qlistwidgetitem2->setText(QApplication::translate("Form", "hairshader", 0, QApplication::UnicodeUTF8));
+			listWidget->setSortingEnabled(__sortingEnabled);
+
+			pushButton->setText(QApplication::translate("Form", "set shader", 0, QApplication::UnicodeUTF8));
+			label->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
+			label_2->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
+			label_3->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
+			label_4->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
+			label_5->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
+			label_6->setText(QApplication::translate("Form", "0", 0, QApplication::UnicodeUTF8));
+			label_7->setText(QApplication::translate("Form", "Specular Strength", 0, QApplication::UnicodeUTF8));
+			label_8->setText(QApplication::translate("Form", "Specular Color", 0, QApplication::UnicodeUTF8));
+			label_9->setText(QApplication::translate("Form", "Glossiness", 0, QApplication::UnicodeUTF8));
+			label_10->setText(QApplication::translate("Form", "Alpha", 0, QApplication::UnicodeUTF8));
+			label_11->setText(QApplication::translate("Form", "Emissive Multiple", 0, QApplication::UnicodeUTF8));
+			label_12->setText(QApplication::translate("Form", "Emissive Color", 0, QApplication::UnicodeUTF8));
+			pushButton_2->setText(QApplication::translate("Form", "Apply changes", 0, QApplication::UnicodeUTF8));
+			pushButton_3->setText(QApplication::translate("Form", "Update scene", 0, QApplication::UnicodeUTF8));
+		} // retranslateUi
 
 };
 }
