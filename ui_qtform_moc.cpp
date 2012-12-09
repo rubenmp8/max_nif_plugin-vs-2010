@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_qtform.h'
 **
-** Created: Wed 28. Nov 01:11:29 2012
+** Created: Sun 9. Dec 12:28:20 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
